@@ -3,6 +3,11 @@ Instapaper-Activity
 
 iOS UIActivity for reading later on Instapaper.
 
+Preview
+=======
+
+()["https://a248.e.akamai.net/assets.github.com/images/modules/about_page/octocat.png?1340659530"]
+
 
 
 License
