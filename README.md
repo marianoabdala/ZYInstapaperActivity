@@ -1,7 +1,7 @@
 Instapaper-Activity
 ===================
 
-iOS UIActivity for reading later on Instapaper.
+iOS UIActivity for reading later on Instapaper. Initially conceived to be used on one of my own projects: [Nyndoo](http://www.nyndoo.com) a page-per-tweet twitter client.
 
 Previews
 ========
