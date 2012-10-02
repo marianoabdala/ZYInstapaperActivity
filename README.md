@@ -6,7 +6,7 @@ iOS UIActivity for reading later on Instapaper.
 Preview
 =======
 
-[]("https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Intro.PNG")
+![]("https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Intro.PNG")
 
 
 
