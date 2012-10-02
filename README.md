@@ -3,10 +3,13 @@ Instapaper-Activity
 
 iOS UIActivity for reading later on Instapaper.
 
-Preview
-=======
+Previews
+========
 
-![]("https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Intro.PNG")
+![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Intro.PNG)
+![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/UIActivityViewController.PNG)
+![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Credentials.PNG)
+![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Adding.PNG)
 
 
 
