@@ -6,33 +6,77 @@
 //  Copyright (c) 2012 Zerously. All rights reserved.
 //
 
-#import "ZYtemsSelectorViewController.h"
+#import "ZYAddItemsViewController.h"
 
-@interface ZYtemsSelectorViewController ()
+@interface ZYAddItemsViewController () <
+    UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) NSArray *activityItems;
+@property (strong, nonatomic) NSMutableArray *selectedActivityItems;
+
+- (void)initializeNavigationBar;
+- (void)cancelButtonTapped;
+- (void)saveButtonTapped;
 
 @end
 
-@implementation ZYtemsSelectorViewController
+@implementation ZYAddItemsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+#pragma mark - Self
+#pragma mark ZYtemsSelectorViewController
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItems:(NSArray *)activityItems {
+    
+    if (activityItems == nil) {
+        
+        return nil;
     }
+    
+    if (activityItems.count == 0) {
+        
+        return nil;
+    }
+    
+    self =
+    [self initWithNibName:nibNameOrNil
+                   bundle:nibBundleOrNil];
+    
+    if (self != nil) {
+        
+        self.activityItems = activityItems;
+        
+        [self initializeNavigationBar];
+    }
+    
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+#pragma mark ZYtemsSelectorViewController ()
+- (void)initializeNavigationBar {
+    
+    self.navigationItem.leftBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"")
+                                     style:UIBarButtonItemStyleBordered
+                                    target:self
+                                    action:@selector(cancelButtonTapped)];
+    
+    self.navigationItem.rightBarButtonItem =
+    [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Save", @"")
+                                     style:UIBarButtonItemStyleDone
+                                    target:self
+                                    action:@selector(saveButtonTapped)];
+    
+    self.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)cancelButtonTapped {
+    
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
+- (void)saveButtonTapped {
+
+    //Save!
 }
 
 @end

@@ -1,5 +1,5 @@
 //
-//  ZYAddViewController.h
+//  ZYAddItemViewController.h
 //  InstapaperActivity
 //
 //  Created by Mariano Abdala on 10/1/12.
@@ -11,7 +11,7 @@
 
 @class ZYInstapaperActivityItem;
 
-@interface ZYAddViewController : ZYActivityViewController
+@interface ZYAddItemViewController : ZYActivityViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItem:(ZYInstapaperActivityItem *)activityItem;
 

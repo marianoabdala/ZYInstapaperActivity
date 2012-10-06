@@ -3,6 +3,8 @@ Instapaper-Activity
 
 iOS UIActivity for reading later on Instapaper. Initially conceived to be used on one of my own projects: [Nyndoo](http://www.nyndoo.com) a page-per-tweet twitter client.
 
+Feel free to add any request, bug or inquiry on the issues section!
+
 Previews
 ========
 

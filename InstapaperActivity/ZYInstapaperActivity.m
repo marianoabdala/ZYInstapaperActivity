@@ -8,13 +8,16 @@
 
 #import "ZYInstapaperActivity.h"
 #import "ZYInstapaperActivityItem.h"
+#import "ZYAddItemsViewController.h"
 #import "ZYCredentialsViewController.h"
-#import "ZYAddViewController.h"
+#import "ZYAddItemViewController.h"
 #import "ZYInstapaperActivitySecurity.h"
 
 @interface ZYInstapaperActivity ()
 
 @property (copy, nonatomic) NSArray *activityItems;
+
+- (void)removeDuplicateActivityItems;
 
 @end
 
@@ -63,7 +66,7 @@
     [activityItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
 
         //If it's an InstapaperActivityItem (internal, non-empty URL is guaranteed).
-        if ([obj class] == [ZYInstapaperActivityItem class]) {
+        if ([obj isKindOfClass:[ZYInstapaperActivityItem class]] == YES) {
             
             urlFound    = YES;
             *stop       = YES;
@@ -71,7 +74,7 @@
         }
 
         //If it's a non-empty URL.
-        if ([obj class] == [NSURL class]) {
+        if ([obj isKindOfClass:[NSURL class]] == YES) {
 
             urlFound    = YES;
             *stop       = YES;
@@ -79,7 +82,8 @@
         }
         
         //If it's a well formated URL string.
-        if ([NSURL URLWithString:obj] != nil) {
+        if ([obj isKindOfClass:[NSString class]] == YES &&
+            [NSURL URLWithString:obj] != nil) {
             
             urlFound    = YES;
             *stop       = YES;
@@ -93,6 +97,7 @@
 - (void)prepareWithActivityItems:(NSArray *)activityItems {
     
     self.activityItems = activityItems;
+    [self removeDuplicateActivityItems];
 }
 
 - (UIViewController *)activityViewController {
@@ -102,29 +107,43 @@
     ZYInstapaperActivitySecurity *security =
     [[ZYInstapaperActivitySecurity alloc] init];
     
-//    if (security.hasCredentials == NO) {
+    if (security.hasCredentials == NO) {
 
         ZYCredentialsViewController *credentialsViewController =
         [[ZYCredentialsViewController alloc] initWithNibName:@"ZYCredentialsViewController"
                                                       bundle:nil
-                                                activityItem:self.activityItems[0]];
+                                               activityItems:self.activityItems];
         
         credentialsViewController.activity = self;
         
         controller = credentialsViewController;
 
-//    } else {
-//        
-//        //TODO: Obtain the right one.
-//        ZYAddViewController *addViewController =
-//        [[ZYAddViewController alloc] initWithNibName:@"ZYAddViewController"
-//                                              bundle:nil
-//                                        activityItem:self.activityItems[0]];
-//        
-//        addViewController.activity = self;
-//        
-//        controller = addViewController;
-//    }
+    } else {
+        
+        if (self.activityItems.count == 1) {
+
+            ZYAddItemViewController *addItemViewController =
+            [[ZYAddItemViewController alloc] initWithNibName:@"ZYAddItemViewController"
+                                                      bundle:nil
+                                                activityItem:self.activityItems[0]];
+            
+            addItemViewController.activity = self;
+            
+            controller = addItemViewController;
+            
+        } else {
+         
+            ZYAddItemsViewController *addItemsViewController =
+            [[ZYAddItemsViewController alloc] initWithNibName:@"ZYAddItemsViewController"
+                                                       bundle:nil
+                                                activityItems:self.activityItems];
+            
+            addItemsViewController.activity = self;
+            
+            controller = addItemsViewController;
+
+        }
+    }
     
     UINavigationController *navigationController =
     [[UINavigationController alloc] initWithRootViewController:controller];
@@ -146,6 +165,88 @@
     });
     
     return _instance;
+}
+
+#pragma mark ZYInstapaperActivity ()
+- (void)removeDuplicateActivityItems {
+
+    NSMutableArray *activityItemsToRemove =
+    [NSMutableArray array];
+    
+    [self.activityItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        //If it's an InstapaperActivityItem (internal, non-empty URL is guaranteed).
+        if ([obj isKindOfClass:[ZYInstapaperActivityItem class]] == YES) {
+            
+            ZYInstapaperActivityItem *item =
+            (ZYInstapaperActivityItem *)obj;
+            
+            [self.activityItems enumerateObjectsUsingBlock:^(id objToRemove, NSUInteger idxToRemove, BOOL *stopToRemove) {
+                
+                if ([item isEqual:objToRemove] == YES) {
+                    
+                    [activityItemsToRemove addObject:objToRemove];
+                    return;
+                }
+                
+                if ([item.url isEqual:objToRemove] == YES) {
+                    
+                    [activityItemsToRemove addObject:objToRemove];
+                    return;
+                }
+                
+                if ([item.url.absoluteString isEqual:objToRemove] == YES) {
+                    
+                    [activityItemsToRemove addObject:objToRemove];
+                    return;
+                }
+            }];
+        }
+     
+        //If it's a non-empty URL.
+        if ([obj isKindOfClass:[NSURL class]] == YES) {
+            
+            NSURL *item =
+            (NSURL *)obj;
+            
+            [self.activityItems enumerateObjectsUsingBlock:^(id objToRemove, NSUInteger idxToRemove, BOOL *stopToRemove) {
+                
+                if ([item isEqual:objToRemove] == YES) {
+                    
+                    [activityItemsToRemove addObject:objToRemove];
+                    return;
+                }
+                
+                if ([item.absoluteString isEqual:objToRemove] == YES) {
+                    
+                    [activityItemsToRemove addObject:objToRemove];
+                    return;
+                }
+            }];
+        }
+        
+        //If it's a well formated URL string.
+        if ([obj isKindOfClass:[NSString class]] == YES &&
+            [NSURL URLWithString:obj] != nil) {
+
+            [self.activityItems enumerateObjectsUsingBlock:^(id objToRemove, NSUInteger idxToRemove, BOOL *stopToRemove) {
+                
+                if ([obj isEqual:objToRemove] == YES) {
+                    
+                    [activityItemsToRemove addObject:objToRemove];
+                    return;
+                }
+            }];
+        }
+    }];
+    
+    NSMutableArray *mutableActivityItems =
+    [NSMutableArray arrayWithArray:self.activityItems];
+
+    [mutableActivityItems removeObjectsInArray:activityItemsToRemove];
+    
+    self.activityItems =
+    [NSArray arrayWithArray:mutableActivityItems];
 }
 
 @end

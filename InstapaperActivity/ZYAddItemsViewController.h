@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZYActivityViewController.h"
 
-@interface ZYtemsSelectorViewController : UIViewController
+@interface ZYAddItemsViewController : ZYActivityViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItems:(NSArray *)activityItems;
 
 @end

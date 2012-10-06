@@ -16,6 +16,32 @@
 
 @implementation ZYInstapaperActivityItem
 
+#pragma mark - Hierarchy
+#pragma mark NSObject
+- (BOOL)isEqual:(id)object {
+    
+    if (object == nil) {
+        
+        return NO;
+    }
+    
+    if ([object isKindOfClass:[ZYInstapaperActivityItem class]] == NO) {
+        
+        return NO;
+    }
+    
+    ZYInstapaperActivityItem *item =
+    (ZYInstapaperActivityItem *)object;
+    
+    return
+    [item.url isEqual:self.url] &&
+    [item.title isEqual:self.title] &&
+    [item.description isEqual:self.description];
+}
+
+
+#pragma mark - Self
+#pragma mark ZYInstapaperActivityItem
 - (id)initWithURL:(NSURL *)url {
 
     if (url == nil) {

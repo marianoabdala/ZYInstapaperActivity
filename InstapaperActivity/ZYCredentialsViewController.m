@@ -9,16 +9,17 @@
 #import "ZYCredentialsViewController.h"
 #import "ZYInstapaperActivitySecurity.h"
 #import "ZYInstapaperActivityItem.h"
-#import "ZYAddViewController.h"
+#import "ZYAddItemViewController.h"
+#import "ZYAddItemsViewController.h"
 
 @interface ZYCredentialsViewController () <
     UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-@property (strong, nonatomic) ZYInstapaperActivityItem *activityItem;
+@property (strong, nonatomic) NSArray *activityItems;
 
-- (void)initializeCancelButton;
+- (void)initializeNavigationBar;
 - (void)cancelButtonTapped;
 
 @end
@@ -37,6 +38,8 @@
         
         self.title =
         NSLocalizedString(@"Read Later", @"");
+
+        [self initializeNavigationBar];
     }
     
     return self;
@@ -46,15 +49,19 @@
     
     [super viewDidLoad];
     
-    [self initializeCancelButton];
     [self.usernameTextField becomeFirstResponder];
 }
 
 #pragma mark - Self
 #pragma mark ZYCredentialsViewController
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItem:(ZYInstapaperActivityItem *)activityItem {
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItems:(NSArray *)activityItems {
     
-    if (activityItem == nil) {
+    if (activityItems == nil) {
+        
+        return nil;
+    }
+    
+    if (activityItems.count == 0) {
         
         return nil;
     }
@@ -65,14 +72,14 @@
     
     if (self != nil) {
         
-        self.activityItem = activityItem;
+        self.activityItems = activityItems;
     }
     
     return self;
 }
 
 #pragma mark ZYCredentialsViewController ()
-- (void)initializeCancelButton {
+- (void)initializeNavigationBar {
 
     self.navigationItem.leftBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"")
@@ -103,16 +110,35 @@
         [security storeUsername:self.usernameTextField.text
                        password:self.passwordTextField.text];
         
+        UIViewController *controller = nil;
         
-        ZYAddViewController *addViewController =
-        [[ZYAddViewController alloc] initWithNibName:@"ZYAddViewController"
-                                              bundle:nil
-                                        activityItem:self.activityItem];
+        if (self.activityItems.count == 1) {
+            
+            ZYAddItemViewController *addItemViewController =
+            [[ZYAddItemViewController alloc] initWithNibName:@"ZYAddItemViewController"
+                                                      bundle:nil
+                                               activityItem:self.activityItems[0]];
+            
+            addItemViewController.activity =
+            self.activity;
+            
+            controller = addItemViewController;
+            
+        } else {
+            
+            ZYAddItemsViewController *addItemsViewController =
+            [[ZYAddItemsViewController alloc] initWithNibName:@"ZYAddItemsViewController"
+                                                       bundle:nil
+                                                activityItems:self.activityItems];
+            
+            addItemsViewController.activity =
+            self.activity;
+            
+            controller = addItemsViewController;
+            
+        }
         
-        addViewController.activity =
-        self.activity;
-        
-        [self.navigationController pushViewController:addViewController
+        [self.navigationController pushViewController:controller
                                              animated:YES];
     }
     

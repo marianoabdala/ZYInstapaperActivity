@@ -28,9 +28,11 @@
 		31785E031617EDCC0076696D /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 31785E021617EDBD0076696D /* KeychainItemWrapper.m */; };
 		31785E051617EDF60076696D /* About.txt in Resources */ = {isa = PBXBuildFile; fileRef = 31785E041617EDF60076696D /* About.txt */; };
 		31785E081617F3750076696D /* ZYInstapaperAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 31785E071617F3750076696D /* ZYInstapaperAddRequest.m */; };
-		31864FE7161A4AD10091E3C6 /* ZYAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31864FE5161A4AD10091E3C6 /* ZYAddViewController.m */; };
-		31864FE8161A4AD10091E3C6 /* ZYAddViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31864FE6161A4AD10091E3C6 /* ZYAddViewController.xib */; };
+		31864FE7161A4AD10091E3C6 /* ZYAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31864FE5161A4AD10091E3C6 /* ZYAddItemViewController.m */; };
+		31864FE8161A4AD10091E3C6 /* ZYAddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31864FE6161A4AD10091E3C6 /* ZYAddItemViewController.xib */; };
 		31864FED161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 31864FEC161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.m */; };
+		31DF0B2C16207442001153B7 /* ZYAddItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DF0B2A16207442001153B7 /* ZYAddItemsViewController.m */; };
+		31DF0B2D16207442001153B7 /* ZYAddItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DF0B2B16207442001153B7 /* ZYAddItemsViewController.xib */; };
 		31F81DBA161A43FD00A61BDF /* ZYCredentialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F81DB8161A43FD00A61BDF /* ZYCredentialsViewController.m */; };
 		31F81DBB161A43FD00A61BDF /* ZYCredentialsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F81DB9161A43FD00A61BDF /* ZYCredentialsViewController.xib */; };
 		31F81DBE161A456F00A61BDF /* ZYActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F81DBD161A456F00A61BDF /* ZYActivityViewController.m */; };
@@ -68,11 +70,14 @@
 		31785E061617F3750076696D /* ZYInstapaperAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperAddRequest.h; sourceTree = "<group>"; };
 		31785E071617F3750076696D /* ZYInstapaperAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperAddRequest.m; sourceTree = "<group>"; };
 		31785E091617F39D0076696D /* ZYInstapaperAddRequestDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperAddRequestDelegate.h; sourceTree = "<group>"; };
-		31864FE4161A4AD10091E3C6 /* ZYAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddViewController.h; sourceTree = "<group>"; };
-		31864FE5161A4AD10091E3C6 /* ZYAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddViewController.m; sourceTree = "<group>"; };
-		31864FE6161A4AD10091E3C6 /* ZYAddViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYAddViewController.xib; sourceTree = "<group>"; };
+		31864FE4161A4AD10091E3C6 /* ZYAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddItemViewController.h; sourceTree = "<group>"; };
+		31864FE5161A4AD10091E3C6 /* ZYAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddItemViewController.m; sourceTree = "<group>"; };
+		31864FE6161A4AD10091E3C6 /* ZYAddItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYAddItemViewController.xib; sourceTree = "<group>"; };
 		31864FEB161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperActivitySecurity.h; sourceTree = "<group>"; };
 		31864FEC161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperActivitySecurity.m; sourceTree = "<group>"; };
+		31DF0B2916207442001153B7 /* ZYAddItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddItemsViewController.h; sourceTree = "<group>"; };
+		31DF0B2A16207442001153B7 /* ZYAddItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddItemsViewController.m; sourceTree = "<group>"; };
+		31DF0B2B16207442001153B7 /* ZYAddItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYAddItemsViewController.xib; sourceTree = "<group>"; };
 		31F81DB7161A43FD00A61BDF /* ZYCredentialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCredentialsViewController.h; sourceTree = "<group>"; };
 		31F81DB8161A43FD00A61BDF /* ZYCredentialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCredentialsViewController.m; sourceTree = "<group>"; };
 		31F81DB9161A43FD00A61BDF /* ZYCredentialsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYCredentialsViewController.xib; sourceTree = "<group>"; };
@@ -226,12 +231,15 @@
 			children = (
 				31F81DBC161A456F00A61BDF /* ZYActivityViewController.h */,
 				31F81DBD161A456F00A61BDF /* ZYActivityViewController.m */,
+				31864FE4161A4AD10091E3C6 /* ZYAddItemViewController.h */,
+				31864FE5161A4AD10091E3C6 /* ZYAddItemViewController.m */,
+				31864FE6161A4AD10091E3C6 /* ZYAddItemViewController.xib */,
 				31F81DB7161A43FD00A61BDF /* ZYCredentialsViewController.h */,
 				31F81DB8161A43FD00A61BDF /* ZYCredentialsViewController.m */,
 				31F81DB9161A43FD00A61BDF /* ZYCredentialsViewController.xib */,
-				31864FE4161A4AD10091E3C6 /* ZYAddViewController.h */,
-				31864FE5161A4AD10091E3C6 /* ZYAddViewController.m */,
-				31864FE6161A4AD10091E3C6 /* ZYAddViewController.xib */,
+				31DF0B2916207442001153B7 /* ZYAddItemsViewController.h */,
+				31DF0B2A16207442001153B7 /* ZYAddItemsViewController.m */,
+				31DF0B2B16207442001153B7 /* ZYAddItemsViewController.xib */,
 			);
 			name = UserInterface;
 			sourceTree = "<group>";
@@ -309,7 +317,8 @@
 				31785DF11617CF910076696D /* instapaper-ipad.png in Resources */,
 				31785E051617EDF60076696D /* About.txt in Resources */,
 				31F81DBB161A43FD00A61BDF /* ZYCredentialsViewController.xib in Resources */,
-				31864FE8161A4AD10091E3C6 /* ZYAddViewController.xib in Resources */,
+				31864FE8161A4AD10091E3C6 /* ZYAddItemViewController.xib in Resources */,
+				31DF0B2D16207442001153B7 /* ZYAddItemsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,8 +338,9 @@
 				31785E081617F3750076696D /* ZYInstapaperAddRequest.m in Sources */,
 				31F81DBA161A43FD00A61BDF /* ZYCredentialsViewController.m in Sources */,
 				31F81DBE161A456F00A61BDF /* ZYActivityViewController.m in Sources */,
-				31864FE7161A4AD10091E3C6 /* ZYAddViewController.m in Sources */,
+				31864FE7161A4AD10091E3C6 /* ZYAddItemViewController.m in Sources */,
 				31864FED161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.m in Sources */,
+				31DF0B2C16207442001153B7 /* ZYAddItemsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

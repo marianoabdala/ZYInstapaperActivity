@@ -1,28 +1,31 @@
 //
-//  ZYAddViewController.m
+//  ZYAddItemViewController.m
 //  InstapaperActivity
 //
 //  Created by Mariano Abdala on 10/1/12.
 //  Copyright (c) 2012 Zerously. All rights reserved.
 //
 
-#import "ZYAddViewController.h"
+#import "ZYAddItemViewController.h"
 #import "ZYInstapaperActivityItem.h"
 #import "ZYInstapaperAddRequest.h"
+#import "ZYCredentialsViewController.h"
 
-@interface ZYAddViewController () <
+@interface ZYAddItemViewController () <
     ZYInstapaperAddRequestDelegate>
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (strong, nonatomic) ZYInstapaperActivityItem *activityItem;
 @property (strong, nonatomic) ZYInstapaperAddRequest *instapaperAddRequest;
 
-- (void)initializeCancelButton;
+- (void)initializeNavigationBar;
 - (void)cancelButtonTapped;
 - (void)launchAddRequest;
 
 @end
 
-@implementation ZYAddViewController
+@implementation ZYAddItemViewController
 
 #pragma mark - Hierarchy
 #pragma mark UIViewController
@@ -36,6 +39,8 @@
         
         self.title =
         NSLocalizedString(@"Read Later", @"");
+        
+        [self initializeNavigationBar];
     }
     
     return self;
@@ -45,12 +50,11 @@
     
     [super viewDidLoad];
     
-    [self initializeCancelButton];
     [self launchAddRequest];
 }
 
 #pragma mark - Self
-#pragma ZYAddViewController
+#pragma ZYAddItemViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItem:(ZYInstapaperActivityItem *)activityItem {
     
     if (activityItem == nil) {
@@ -71,8 +75,8 @@
 }
 
 
-#pragma ZYAddViewController ()
-- (void)initializeCancelButton {
+#pragma ZYAddItemViewController ()
+- (void)initializeNavigationBar {
     
     self.navigationItem.leftBarButtonItem =
     [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Cancel", @"")
@@ -80,7 +84,6 @@
                                     target:self
                                     action:@selector(cancelButtonTapped)];
 }
-
 
 - (void)cancelButtonTapped {
     
@@ -101,20 +104,38 @@
 #pragma mark ZYInstapaperAddRequestDelegate
 - (void)instapaperAddRequestSucceded:(ZYInstapaperAddRequest *)request {
     
-    //TODO: Change labels!
+    self.statusLabel.text =
+    NSLocalizedString(@"Done!", @"");
     
+    [self.activityIndicatorView stopAnimating];
+
     [self dismissViewControllerAnimated:YES
                              completion:nil];
 }
 
 - (void)instapaperAddRequestFailed:(ZYInstapaperAddRequest *)request {
     
-    //TODO: !!
+    self.statusLabel.text =
+    NSLocalizedString(@"Error, try again later.", @"");
+    
+    [self.activityIndicatorView stopAnimating];
+
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
 }
 
 - (void)instapaperAddRequestIncorrectPassword:(ZYInstapaperAddRequest *)request {
     
-    //TODO: !!
+    ZYCredentialsViewController *credentialsViewController =
+    [[ZYCredentialsViewController alloc] initWithNibName:@"ZYCredentialsViewController"
+                                                  bundle:nil
+                                           activityItems:@ [ self.activityItem ]];
+    
+    credentialsViewController.activity =
+    self.activity;
+    
+    [self.navigationController pushViewController:credentialsViewController
+                                         animated:YES];
 }
 
 @end

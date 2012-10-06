@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ZYActivityViewController.h"
 
-@class ZYInstapaperActivityItem;
-
 @interface ZYCredentialsViewController : ZYActivityViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItem:(ZYInstapaperActivityItem *)activityItem;
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil activityItems:(NSArray *)activityItems;
 
 @end
