@@ -99,6 +99,7 @@
     
     self.activityItems = activityItems;
     [self removeDuplicateActivityItems];
+    [self boxActivityItems];
 }
 
 - (UIViewController *)activityViewController {
@@ -183,7 +184,8 @@
             
             [self.activityItems enumerateObjectsUsingBlock:^(id objToRemove, NSUInteger idxToRemove, BOOL *stopToRemove) {
                 
-                if ([item isEqual:objToRemove] == YES) {
+                if (item != objToRemove &&
+                    [item isEqual:objToRemove] == YES) {
                     
                     [activityItemsToRemove addObject:objToRemove];
                     return;

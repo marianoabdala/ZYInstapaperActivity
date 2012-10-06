@@ -79,7 +79,7 @@
      item.description != nil ? item.description : @""];
     
     NSURL *url =
-    [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+    [NSURL URLWithString:[urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     
     NSURLRequest *urlRequest =
     [NSURLRequest requestWithURL:url];
