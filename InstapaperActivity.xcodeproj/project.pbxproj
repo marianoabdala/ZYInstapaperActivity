@@ -112,6 +112,16 @@
 			name = TopAlignedLabel;
 			sourceTree = "<group>";
 		};
+		3163AAA51620AFC4000C7223 /* KeychainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				31785E011617EDBD0076696D /* KeychainItemWrapper.h */,
+				31785E021617EDBD0076696D /* KeychainItemWrapper.m */,
+				31785E041617EDF60076696D /* About.txt */,
+			);
+			name = KeychainItemWrapper;
+			sourceTree = "<group>";
+		};
 		31785DAE1617C9D90076696D = {
 			isa = PBXGroup;
 			children = (
@@ -223,9 +233,7 @@
 		31785DF61617E3D60076696D /* Apple */ = {
 			isa = PBXGroup;
 			children = (
-				31785E011617EDBD0076696D /* KeychainItemWrapper.h */,
-				31785E021617EDBD0076696D /* KeychainItemWrapper.m */,
-				31785E041617EDF60076696D /* About.txt */,
+				3163AAA51620AFC4000C7223 /* KeychainItemWrapper */,
 			);
 			name = Apple;
 			sourceTree = "<group>";
