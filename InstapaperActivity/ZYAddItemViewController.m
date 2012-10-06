@@ -11,6 +11,9 @@
 #import "ZYInstapaperAddRequest.h"
 #import "ZYCredentialsViewController.h"
 
+#define FAST_DISMISS_DELAY  0.5f
+#define SLOW_DISMISS_DELAY  1.0f
+
 @interface ZYAddItemViewController () <
     ZYInstapaperAddRequestDelegate>
 
@@ -22,6 +25,7 @@
 - (void)initializeNavigationBar;
 - (void)cancelButtonTapped;
 - (void)launchAddRequest;
+- (void)dismiss;
 
 @end
 
@@ -100,6 +104,12 @@
                                         delegate:self];
 }
 
+- (void)dismiss {
+ 
+    [self dismissViewControllerAnimated:YES
+                             completion:nil];
+}
+
 #pragma mark - Protocols
 #pragma mark ZYInstapaperAddRequestDelegate
 - (void)instapaperAddRequestSucceded:(ZYInstapaperAddRequest *)request {
@@ -109,8 +119,9 @@
     
     [self.activityIndicatorView stopAnimating];
 
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self performSelector:@selector(dismiss)
+               withObject:nil
+               afterDelay:FAST_DISMISS_DELAY];
 }
 
 - (void)instapaperAddRequestFailed:(ZYInstapaperAddRequest *)request {
@@ -120,8 +131,9 @@
     
     [self.activityIndicatorView stopAnimating];
 
-    [self dismissViewControllerAnimated:YES
-                             completion:nil];
+    [self performSelector:@selector(dismiss)
+               withObject:nil
+               afterDelay:SLOW_DISMISS_DELAY];
 }
 
 - (void)instapaperAddRequestIncorrectPassword:(ZYInstapaperAddRequest *)request {
