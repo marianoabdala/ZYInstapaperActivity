@@ -28,6 +28,10 @@
     ZYInstapaperActivityItem *item =
     [[ZYInstapaperActivityItem alloc] initWithURL:textFieldURL];
     
+    //Actual implementation might obtain it somehow.
+    //This is just to test capabilities.
+    item.title = @"Fixed quotes";
+    
     NSArray *activityItems =
     @[ item ];
     

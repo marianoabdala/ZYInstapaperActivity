@@ -18,6 +18,7 @@
 @property (copy, nonatomic) NSArray *activityItems;
 
 - (void)removeDuplicateActivityItems;
+- (void)boxActivityItems;
 
 @end
 
@@ -175,7 +176,6 @@
     
     [self.activityItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         
-        //If it's an InstapaperActivityItem (internal, non-empty URL is guaranteed).
         if ([obj isKindOfClass:[ZYInstapaperActivityItem class]] == YES) {
             
             ZYInstapaperActivityItem *item =
@@ -203,7 +203,6 @@
             }];
         }
      
-        //If it's a non-empty URL.
         if ([obj isKindOfClass:[NSURL class]] == YES) {
             
             NSURL *item =
@@ -225,7 +224,6 @@
             }];
         }
         
-        //If it's a well formated URL string.
         if ([obj isKindOfClass:[NSString class]] == YES &&
             [NSURL URLWithString:obj] != nil) {
 
@@ -245,6 +243,49 @@
 
     [mutableActivityItems removeObjectsInArray:activityItemsToRemove];
     
+    self.activityItems =
+    [NSArray arrayWithArray:mutableActivityItems];
+}
+
+- (void)boxActivityItems {
+    
+    NSMutableArray *mutableActivityItems =
+    [NSMutableArray array];
+    
+    [self.activityItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        if ([obj isKindOfClass:[ZYInstapaperActivityItem class]] == YES) {
+
+            [mutableActivityItems addObject:obj];
+            
+            return;
+        }
+        
+        if ([obj isKindOfClass:[NSURL class]] == YES) {
+            
+            ZYInstapaperActivityItem *item =
+            [[ZYInstapaperActivityItem alloc] initWithURL:(NSURL *)obj];
+            
+            [mutableActivityItems addObject:item];
+            
+            return;
+        }
+        
+        if ([obj isKindOfClass:[NSString class]] == YES &&
+            [NSURL URLWithString:obj] != nil) {
+
+            NSURL *url =
+            [NSURL URLWithString:(NSString *)obj];
+            
+            ZYInstapaperActivityItem *item =
+            [[ZYInstapaperActivityItem alloc] initWithURL:url];
+
+            [mutableActivityItems addObject:item];
+
+            return;
+        }
+    }];
+
     self.activityItems =
     [NSArray arrayWithArray:mutableActivityItems];
 }

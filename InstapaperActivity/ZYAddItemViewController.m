@@ -10,6 +10,7 @@
 #import "ZYInstapaperActivityItem.h"
 #import "ZYInstapaperAddRequest.h"
 #import "ZYCredentialsViewController.h"
+#import "ZYTopAlignedLabel.h"
 
 #define FAST_DISMISS_DELAY  0.5f
 #define SLOW_DISMISS_DELAY  1.0f
@@ -19,10 +20,13 @@
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicatorView;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet ZYTopAlignedLabel *urlLabel;
 @property (strong, nonatomic) ZYInstapaperActivityItem *activityItem;
 @property (strong, nonatomic) ZYInstapaperAddRequest *instapaperAddRequest;
 
 - (void)initializeNavigationBar;
+- (void)initializeItemDetails;
 - (void)cancelButtonTapped;
 - (void)launchAddRequest;
 - (void)dismiss;
@@ -54,6 +58,7 @@
     
     [super viewDidLoad];
     
+    [self initializeItemDetails];
     [self launchAddRequest];
 }
 
@@ -78,7 +83,6 @@
     return self;
 }
 
-
 #pragma ZYAddItemViewController ()
 - (void)initializeNavigationBar {
     
@@ -87,6 +91,18 @@
                                      style:UIBarButtonItemStyleBordered
                                     target:self
                                     action:@selector(cancelButtonTapped)];
+}
+
+- (void)initializeItemDetails {
+    
+    if (self.activityItem.title != nil) {
+        
+        self.titleLabel.text =
+        self.activityItem.title;
+
+        self.urlLabel.text =
+        self.activityItem.url.absoluteString;
+    }
 }
 
 - (void)cancelButtonTapped {
@@ -128,6 +144,9 @@
     
     self.statusLabel.text =
     NSLocalizedString(@"Error, try again later.", @"");
+    
+    self.titleLabel.text = nil;
+    self.urlLabel.text = nil;
     
     [self.activityIndicatorView stopAnimating];
 
