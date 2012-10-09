@@ -34,6 +34,8 @@
 		31864FED161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 31864FEC161A4CE10091E3C6 /* ZYInstapaperActivitySecurity.m */; };
 		31DF0B2C16207442001153B7 /* ZYAddItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31DF0B2A16207442001153B7 /* ZYAddItemsViewController.m */; };
 		31DF0B2D16207442001153B7 /* ZYAddItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31DF0B2B16207442001153B7 /* ZYAddItemsViewController.xib */; };
+		31E39D7616239FD6003BA2F7 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E39D7516239FD6003BA2F7 /* Icon.png */; };
+		31E39D7916239FDA003BA2F7 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 31E39D7816239FDA003BA2F7 /* Icon@2x.png */; };
 		31F81DBA161A43FD00A61BDF /* ZYCredentialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F81DB8161A43FD00A61BDF /* ZYCredentialsViewController.m */; };
 		31F81DBB161A43FD00A61BDF /* ZYCredentialsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 31F81DB9161A43FD00A61BDF /* ZYCredentialsViewController.xib */; };
 		31F81DBE161A456F00A61BDF /* ZYActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F81DBD161A456F00A61BDF /* ZYActivityViewController.m */; };
@@ -81,6 +83,8 @@
 		31DF0B2916207442001153B7 /* ZYAddItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddItemsViewController.h; sourceTree = "<group>"; };
 		31DF0B2A16207442001153B7 /* ZYAddItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddItemsViewController.m; sourceTree = "<group>"; };
 		31DF0B2B16207442001153B7 /* ZYAddItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYAddItemsViewController.xib; sourceTree = "<group>"; };
+		31E39D7516239FD6003BA2F7 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		31E39D7816239FDA003BA2F7 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		31F81DB7161A43FD00A61BDF /* ZYCredentialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCredentialsViewController.h; sourceTree = "<group>"; };
 		31F81DB8161A43FD00A61BDF /* ZYCredentialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCredentialsViewController.m; sourceTree = "<group>"; };
 		31F81DB9161A43FD00A61BDF /* ZYCredentialsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYCredentialsViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				31785DE81617CF7B0076696D /* ThirdParties */,
+				31E39D7516239FD6003BA2F7 /* Icon.png */,
+				31E39D7816239FDA003BA2F7 /* Icon@2x.png */,
 				31785DCC1617C9D90076696D /* ZYAppDelegate.h */,
 				31785DCD1617C9D90076696D /* ZYAppDelegate.m */,
 				31785DD51617C9D90076696D /* MainStoryboard.storyboard */,
@@ -340,6 +346,8 @@
 				31F81DBB161A43FD00A61BDF /* ZYCredentialsViewController.xib in Resources */,
 				31864FE8161A4AD10091E3C6 /* ZYAddItemViewController.xib in Resources */,
 				31DF0B2D16207442001153B7 /* ZYAddItemsViewController.xib in Resources */,
+				31E39D7616239FD6003BA2F7 /* Icon.png in Resources */,
+				31E39D7916239FDA003BA2F7 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
