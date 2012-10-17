@@ -14,6 +14,43 @@ Previews
 ![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Credentials.PNG)
 ![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Adding.PNG)
 
+Usage sample
+============
+
+    NSURL *url =
+    [NSURL URLWithString:@"http://mariano.zerously.com/post/28497816299/fixed-quotes"];
+    
+    ZYInstapaperActivityItem *item =
+    [[ZYInstapaperActivityItem alloc] initWithURL:textFieldURL];
+    
+    item.title = @"Fixed quotes";
+		item.description = @"Saved using @Nyndoo.";
+    
+    NSArray *activityItems =
+    @[ item ];
+    
+    NSArray *applicationActivities =
+    @[ [ZYInstapaperActivity instance] ];
+    
+    UIActivityViewController *activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:activityItems
+                                      applicationActivities:applicationActivities];
+    
+    //Show only Instapaper Activity.
+    activityViewController.excludedActivityTypes =
+    @[  UIActivityTypePostToFacebook,
+        UIActivityTypePostToTwitter,
+        UIActivityTypePostToWeibo,
+        UIActivityTypeMessage,
+        UIActivityTypeMail,
+        UIActivityTypePrint,
+        UIActivityTypeCopyToPasteboard,
+        UIActivityTypeAssignToContact,
+        UIActivityTypeSaveToCameraRoll  ];
+    
+    [self presentViewController:activityViewController
+                       animated:YES
+                     completion:nil];
 
 
 License
