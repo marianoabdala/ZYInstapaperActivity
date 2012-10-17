@@ -20,6 +20,20 @@ Usage sample
     NSURL *url =
     [NSURL URLWithString:@"http://mariano.zerously.com/post/28497816299/fixed-quotes"];
     
+    UIActivityViewController *activityViewController =
+    [[UIActivityViewController alloc] initWithActivityItems:@[ url ]
+applicationActivities:@[ [ZYInstapaperActivity instance] ]];
+    
+    [self presentViewController:activityViewController
+                       animated:YES
+                     completion:nil];
+
+
+# With some extra options
+
+    NSURL *url =
+    [NSURL URLWithString:@"http://mariano.zerously.com/post/28497816299/fixed-quotes"];
+    
     ZYInstapaperActivityItem *item =
     [[ZYInstapaperActivityItem alloc] initWithURL:textFieldURL];
     
