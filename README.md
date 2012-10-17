@@ -24,7 +24,7 @@ Usage sample
     [[ZYInstapaperActivityItem alloc] initWithURL:textFieldURL];
     
     item.title = @"Fixed quotes";
-		item.description = @"Saved using @Nyndoo.";
+    item.description = @"Saved using @Nyndoo.";
     
     NSArray *activityItems =
     @[ item ];
