@@ -22,7 +22,7 @@ Usage sample
     
     UIActivityViewController *activityViewController =
     [[UIActivityViewController alloc] initWithActivityItems:@[ url ]
-                               applicationActivities:@[ [ZYInstapaperActivity instance] ]];
+                                                        applicationActivities:@[ [ZYInstapaperActivity instance] ]];
     
     [self presentViewController:activityViewController
                        animated:YES
