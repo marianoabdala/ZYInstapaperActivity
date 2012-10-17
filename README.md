@@ -29,7 +29,7 @@ Usage sample
                      completion:nil];
 
 
-## With some extra options
+**With some extra options**
 
     NSURL *url =
     [NSURL URLWithString:@"http://mariano.zerously.com/post/28497816299/fixed-quotes"];
