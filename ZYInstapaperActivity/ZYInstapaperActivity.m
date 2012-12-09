@@ -5,6 +5,8 @@
 //  Created by Mariano Abdala on 9/29/12.
 //  Copyright (c) 2012 Zerously. All rights reserved.
 //
+//  https://github.com/marianoabdala/ZYInstapaperActivity
+//
 
 #import "ZYInstapaperActivity.h"
 #import "ZYInstapaperActivityItem.h"
