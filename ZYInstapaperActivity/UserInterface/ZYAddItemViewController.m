@@ -30,6 +30,7 @@
 - (void)initializeNavigationBar;
 - (void)initializeItemDetails;
 - (void)cancelButtonTapped;
+- (void)centerActivityIndicatorView;
 - (void)launchAddRequest;
 - (void)dismiss;
 
@@ -60,6 +61,7 @@
     
     [super viewDidLoad];
     
+    [self centerActivityIndicatorView];
     [self initializeItemDetails];
     [self launchAddRequest];
 }
@@ -72,6 +74,11 @@
         
         return nil;
     }
+    
+    nibNameOrNil =
+    UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone ?
+    @"ZYAddItemViewController" :
+    @"ZYAddItemViewController-iPad";
     
     self =
     [self initWithNibName:nibNameOrNil
@@ -113,6 +120,15 @@
     
     [self dismissViewControllerAnimated:YES
                              completion:nil];
+}
+
+- (void)centerActivityIndicatorView {
+    
+    self.activityIndicatorView.frame =
+    CGRectMake((self.view.frame.size.width - self.activityIndicatorView.frame.size.width) / 2,
+               self.activityIndicatorView.frame.origin.y,
+               self.activityIndicatorView.frame.size.width,
+               self.activityIndicatorView.frame.size.height);
 }
 
 - (void)launchAddRequest {

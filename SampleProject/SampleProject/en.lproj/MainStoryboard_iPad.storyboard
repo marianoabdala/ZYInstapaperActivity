@@ -1,23 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="4">
             <objects>
                 <viewController id="2" customClass="ZYViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jqZ-YK-qtl">
+                                <items>
+                                    <navigationItem id="9h8-xk-uep">
+                                        <barButtonItem key="rightBarButtonItem" title="Share!" id="hLW-fc-z3A">
+                                            <connections>
+                                                <action selector="shareButtonTapped:" destination="2" id="mLC-i2-IBW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://mariano.zerously.com/post/28497816299/fixed-quotes" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rcI-Lh-Mmd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="450" id="Yku-kg-IAH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rcI-Lh-Mmd" firstAttribute="top" secondItem="5" secondAttribute="top" constant="84" id="VJn-H2-54U"/>
+                            <constraint firstItem="jqZ-YK-qtl" firstAttribute="leading" secondItem="5" secondAttribute="leading" type="default" id="WyV-KQ-cTe"/>
+                            <constraint firstItem="rcI-Lh-Mmd" firstAttribute="leading" secondItem="5" secondAttribute="leading" constant="40" id="cVM-Ox-rS4"/>
+                            <constraint firstItem="jqZ-YK-qtl" firstAttribute="top" secondItem="5" secondAttribute="top" type="default" id="f68-o9-Plg"/>
+                            <constraint firstItem="jqZ-YK-qtl" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" type="default" id="hjv-Sk-Q6c"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="shareButton" destination="hLW-fc-z3A" id="2fj-de-VDY"/>
+                        <outlet property="textField" destination="rcI-Lh-Mmd" id="KAw-Av-zJI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ZYViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ZYViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonTapped:"/>
+                <relationship kind="outlet" name="shareButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
