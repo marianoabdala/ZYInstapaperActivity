@@ -66,6 +66,16 @@ Usage sample
                        animated:YES
                      completion:nil];
 
+How to install
+==============
+
+1. Drag the ZYInstapaperActivity folder into your own project.
+2. Make sure the Security.framework is linked, if not link it.
+3. Make sure you are not already using Apple's KeychainItemWrapper, if you are you'll have it duplicate. Choose one and delete the other.
+
+Other referenced projects
+=========================
+
 
 License
 =======

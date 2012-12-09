@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		310D0A4916751F99006D271F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310D0A4816751F99006D271F /* UIKit.framework */; };
+		310D0A4B16751F99006D271F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310D0A4A16751F99006D271F /* Foundation.framework */; };
+		310D0A4D16751F99006D271F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310D0A4C16751F99006D271F /* CoreGraphics.framework */; };
+		310D0A5316751F99006D271F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 310D0A5116751F99006D271F /* InfoPlist.strings */; };
+		310D0A5516751F99006D271F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 310D0A5416751F99006D271F /* main.m */; };
+		310D0A5916751F99006D271F /* ZYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 310D0A5816751F99006D271F /* ZYAppDelegate.m */; };
+		310D0A5B16751F99006D271F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 310D0A5A16751F99006D271F /* Default.png */; };
+		310D0A5D16751F99006D271F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 310D0A5C16751F99006D271F /* Default@2x.png */; };
+		310D0A5F16751F99006D271F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 310D0A5E16751F99006D271F /* Default-568h@2x.png */; };
+		310D0A6216751F99006D271F /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310D0A6016751F99006D271F /* MainStoryboard_iPhone.storyboard */; };
+		310D0A6516751F99006D271F /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310D0A6316751F99006D271F /* MainStoryboard_iPad.storyboard */; };
+		310D0A6816751F99006D271F /* ZYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 310D0A6716751F99006D271F /* ZYViewController.m */; };
+		318096F31675300B00B432B2 /* instapaper-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 318096CC1675300B00B432B2 /* instapaper-ipad.png */; };
+		318096F41675300B00B432B2 /* instapaper-ipad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318096CD1675300B00B432B2 /* instapaper-ipad@2x.png */; };
+		318096F51675300B00B432B2 /* instapaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 318096CE1675300B00B432B2 /* instapaper.png */; };
+		318096F61675300B00B432B2 /* instapaper@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318096CF1675300B00B432B2 /* instapaper@2x.png */; };
+		318096F71675300B00B432B2 /* ZYInstapaperAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096D21675300B00B432B2 /* ZYInstapaperAddRequest.m */; };
+		318096F81675300B00B432B2 /* ZYInstapaperActivitySecurity.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096D61675300B00B432B2 /* ZYInstapaperActivitySecurity.m */; };
+		318096F91675300B00B432B2 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096DB1675300B00B432B2 /* KeychainItemWrapper.m */; };
+		318096FA1675300B00B432B2 /* ZYActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096DF1675300B00B432B2 /* ZYActivity.m */; };
+		318096FB1675300B00B432B2 /* ZYTopAlignedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096E21675300B00B432B2 /* ZYTopAlignedLabel.m */; };
+		318096FC1675300B00B432B2 /* ZYActivityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096E51675300B00B432B2 /* ZYActivityViewController.m */; };
+		318096FD1675300B00B432B2 /* ZYAddItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096E71675300B00B432B2 /* ZYAddItemsViewController.m */; };
+		318096FE1675300B00B432B2 /* ZYAddItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318096E81675300B00B432B2 /* ZYAddItemsViewController.xib */; };
+		318096FF1675300B00B432B2 /* ZYAddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096EA1675300B00B432B2 /* ZYAddItemViewController.m */; };
+		318097001675300B00B432B2 /* ZYAddItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318096EB1675300B00B432B2 /* ZYAddItemViewController.xib */; };
+		318097011675300B00B432B2 /* ZYCredentialsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096ED1675300B00B432B2 /* ZYCredentialsViewController.m */; };
+		318097021675300B00B432B2 /* ZYCredentialsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 318096EE1675300B00B432B2 /* ZYCredentialsViewController.xib */; };
+		318097031675300B00B432B2 /* ZYInstapaperActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096F01675300B00B432B2 /* ZYInstapaperActivity.m */; };
+		318097041675300B00B432B2 /* ZYInstapaperActivityItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 318096F21675300B00B432B2 /* ZYInstapaperActivityItem.m */; };
+		3180970A1675305700B432B2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 318097091675305700B432B2 /* Security.framework */; };
+		318097101675342600B432B2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3180970F1675342600B432B2 /* Icon.png */; };
+		318097121675342900B432B2 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 318097111675342900B432B2 /* Icon@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		310D0A4416751F99006D271F /* SampleProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SampleProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		310D0A4816751F99006D271F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		310D0A4A16751F99006D271F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		310D0A4C16751F99006D271F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		310D0A5016751F99006D271F /* SampleProject-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SampleProject-Info.plist"; sourceTree = "<group>"; };
+		310D0A5216751F99006D271F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		310D0A5416751F99006D271F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		310D0A5616751F99006D271F /* SampleProject-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SampleProject-Prefix.pch"; sourceTree = "<group>"; };
+		310D0A5716751F99006D271F /* ZYAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYAppDelegate.h; sourceTree = "<group>"; };
+		310D0A5816751F99006D271F /* ZYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYAppDelegate.m; sourceTree = "<group>"; };
+		310D0A5A16751F99006D271F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		310D0A5C16751F99006D271F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		310D0A5E16751F99006D271F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		310D0A6116751F99006D271F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		310D0A6416751F99006D271F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		310D0A6616751F99006D271F /* ZYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZYViewController.h; sourceTree = "<group>"; };
+		310D0A6716751F99006D271F /* ZYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZYViewController.m; sourceTree = "<group>"; };
+		318096CC1675300B00B432B2 /* instapaper-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instapaper-ipad.png"; sourceTree = "<group>"; };
+		318096CD1675300B00B432B2 /* instapaper-ipad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instapaper-ipad@2x.png"; sourceTree = "<group>"; };
+		318096CE1675300B00B432B2 /* instapaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = instapaper.png; sourceTree = "<group>"; };
+		318096CF1675300B00B432B2 /* instapaper@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "instapaper@2x.png"; sourceTree = "<group>"; };
+		318096D11675300B00B432B2 /* ZYInstapaperAddRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperAddRequest.h; sourceTree = "<group>"; };
+		318096D21675300B00B432B2 /* ZYInstapaperAddRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperAddRequest.m; sourceTree = "<group>"; };
+		318096D31675300B00B432B2 /* ZYInstapaperAddRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperAddRequestDelegate.h; sourceTree = "<group>"; };
+		318096D51675300B00B432B2 /* ZYInstapaperActivitySecurity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperActivitySecurity.h; sourceTree = "<group>"; };
+		318096D61675300B00B432B2 /* ZYInstapaperActivitySecurity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperActivitySecurity.m; sourceTree = "<group>"; };
+		318096DA1675300B00B432B2 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		318096DB1675300B00B432B2 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		318096DE1675300B00B432B2 /* ZYActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYActivity.h; sourceTree = "<group>"; };
+		318096DF1675300B00B432B2 /* ZYActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYActivity.m; sourceTree = "<group>"; };
+		318096E11675300B00B432B2 /* ZYTopAlignedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYTopAlignedLabel.h; sourceTree = "<group>"; };
+		318096E21675300B00B432B2 /* ZYTopAlignedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYTopAlignedLabel.m; sourceTree = "<group>"; };
+		318096E41675300B00B432B2 /* ZYActivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYActivityViewController.h; sourceTree = "<group>"; };
+		318096E51675300B00B432B2 /* ZYActivityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYActivityViewController.m; sourceTree = "<group>"; };
+		318096E61675300B00B432B2 /* ZYAddItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddItemsViewController.h; sourceTree = "<group>"; };
+		318096E71675300B00B432B2 /* ZYAddItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddItemsViewController.m; sourceTree = "<group>"; };
+		318096E81675300B00B432B2 /* ZYAddItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYAddItemsViewController.xib; sourceTree = "<group>"; };
+		318096E91675300B00B432B2 /* ZYAddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYAddItemViewController.h; sourceTree = "<group>"; };
+		318096EA1675300B00B432B2 /* ZYAddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYAddItemViewController.m; sourceTree = "<group>"; };
+		318096EB1675300B00B432B2 /* ZYAddItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYAddItemViewController.xib; sourceTree = "<group>"; };
+		318096EC1675300B00B432B2 /* ZYCredentialsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYCredentialsViewController.h; sourceTree = "<group>"; };
+		318096ED1675300B00B432B2 /* ZYCredentialsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYCredentialsViewController.m; sourceTree = "<group>"; };
+		318096EE1675300B00B432B2 /* ZYCredentialsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZYCredentialsViewController.xib; sourceTree = "<group>"; };
+		318096EF1675300B00B432B2 /* ZYInstapaperActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperActivity.h; sourceTree = "<group>"; };
+		318096F01675300B00B432B2 /* ZYInstapaperActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperActivity.m; sourceTree = "<group>"; };
+		318096F11675300B00B432B2 /* ZYInstapaperActivityItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYInstapaperActivityItem.h; sourceTree = "<group>"; };
+		318096F21675300B00B432B2 /* ZYInstapaperActivityItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYInstapaperActivityItem.m; sourceTree = "<group>"; };
+		318097091675305700B432B2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		3180970F1675342600B432B2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		318097111675342900B432B2 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		310D0A4116751F99006D271F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3180970A1675305700B432B2 /* Security.framework in Frameworks */,
+				310D0A4916751F99006D271F /* UIKit.framework in Frameworks */,
+				310D0A4B16751F99006D271F /* Foundation.framework in Frameworks */,
+				310D0A4D16751F99006D271F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		310D0A3916751F99006D271F = {
+			isa = PBXGroup;
+			children = (
+				310D0A4E16751F99006D271F /* SampleProject */,
+				310D0A4716751F99006D271F /* Frameworks */,
+				310D0A4516751F99006D271F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		310D0A4516751F99006D271F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				310D0A4416751F99006D271F /* SampleProject.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		310D0A4716751F99006D271F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				318097091675305700B432B2 /* Security.framework */,
+				310D0A4816751F99006D271F /* UIKit.framework */,
+				310D0A4A16751F99006D271F /* Foundation.framework */,
+				310D0A4C16751F99006D271F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		310D0A4E16751F99006D271F /* SampleProject */ = {
+			isa = PBXGroup;
+			children = (
+				318097131675343900B432B2 /* Images */,
+				310D0A4F16751F99006D271F /* Supporting Files */,
+				318096CA1675300B00B432B2 /* ZYInstapaperActivity */,
+				310D0A5716751F99006D271F /* ZYAppDelegate.h */,
+				310D0A5816751F99006D271F /* ZYAppDelegate.m */,
+				310D0A6016751F99006D271F /* MainStoryboard_iPhone.storyboard */,
+				310D0A6316751F99006D271F /* MainStoryboard_iPad.storyboard */,
+				310D0A6616751F99006D271F /* ZYViewController.h */,
+				310D0A6716751F99006D271F /* ZYViewController.m */,
+			);
+			path = SampleProject;
+			sourceTree = "<group>";
+		};
+		310D0A4F16751F99006D271F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				310D0A5016751F99006D271F /* SampleProject-Info.plist */,
+				310D0A5116751F99006D271F /* InfoPlist.strings */,
+				310D0A5416751F99006D271F /* main.m */,
+				310D0A5616751F99006D271F /* SampleProject-Prefix.pch */,
+				310D0A5A16751F99006D271F /* Default.png */,
+				310D0A5C16751F99006D271F /* Default@2x.png */,
+				310D0A5E16751F99006D271F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		318096CA1675300B00B432B2 /* ZYInstapaperActivity */ = {
+			isa = PBXGroup;
+			children = (
+				318096CB1675300B00B432B2 /* Images */,
+				318096D01675300B00B432B2 /* Requests */,
+				318096D41675300B00B432B2 /* Security */,
+				318096D71675300B00B432B2 /* ThirdParties */,
+				318096E31675300B00B432B2 /* UserInterface */,
+				318096EF1675300B00B432B2 /* ZYInstapaperActivity.h */,
+				318096F01675300B00B432B2 /* ZYInstapaperActivity.m */,
+				318096F11675300B00B432B2 /* ZYInstapaperActivityItem.h */,
+				318096F21675300B00B432B2 /* ZYInstapaperActivityItem.m */,
+			);
+			name = ZYInstapaperActivity;
+			path = ../../ZYInstapaperActivity;
+			sourceTree = "<group>";
+		};
+		318096CB1675300B00B432B2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				318096CC1675300B00B432B2 /* instapaper-ipad.png */,
+				318096CD1675300B00B432B2 /* instapaper-ipad@2x.png */,
+				318096CE1675300B00B432B2 /* instapaper.png */,
+				318096CF1675300B00B432B2 /* instapaper@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		318096D01675300B00B432B2 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				318096D11675300B00B432B2 /* ZYInstapaperAddRequest.h */,
+				318096D21675300B00B432B2 /* ZYInstapaperAddRequest.m */,
+				318096D31675300B00B432B2 /* ZYInstapaperAddRequestDelegate.h */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		318096D41675300B00B432B2 /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				318096D51675300B00B432B2 /* ZYInstapaperActivitySecurity.h */,
+				318096D61675300B00B432B2 /* ZYInstapaperActivitySecurity.m */,
+			);
+			path = Security;
+			sourceTree = "<group>";
+		};
+		318096D71675300B00B432B2 /* ThirdParties */ = {
+			isa = PBXGroup;
+			children = (
+				318096D81675300B00B432B2 /* Apple */,
+				318096DC1675300B00B432B2 /* Zerously */,
+			);
+			path = ThirdParties;
+			sourceTree = "<group>";
+		};
+		318096D81675300B00B432B2 /* Apple */ = {
+			isa = PBXGroup;
+			children = (
+				318096D91675300B00B432B2 /* KeychainItemWrapper */,
+			);
+			path = Apple;
+			sourceTree = "<group>";
+		};
+		318096D91675300B00B432B2 /* KeychainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				318096DA1675300B00B432B2 /* KeychainItemWrapper.h */,
+				318096DB1675300B00B432B2 /* KeychainItemWrapper.m */,
+			);
+			path = KeychainItemWrapper;
+			sourceTree = "<group>";
+		};
+		318096DC1675300B00B432B2 /* Zerously */ = {
+			isa = PBXGroup;
+			children = (
+				318096DD1675300B00B432B2 /* ZYActivity */,
+				318096E01675300B00B432B2 /* ZYTopAlignedLabel */,
+			);
+			path = Zerously;
+			sourceTree = "<group>";
+		};
+		318096DD1675300B00B432B2 /* ZYActivity */ = {
+			isa = PBXGroup;
+			children = (
+				318096DE1675300B00B432B2 /* ZYActivity.h */,
+				318096DF1675300B00B432B2 /* ZYActivity.m */,
+			);
+			path = ZYActivity;
+			sourceTree = "<group>";
+		};
+		318096E01675300B00B432B2 /* ZYTopAlignedLabel */ = {
+			isa = PBXGroup;
+			children = (
+				318096E11675300B00B432B2 /* ZYTopAlignedLabel.h */,
+				318096E21675300B00B432B2 /* ZYTopAlignedLabel.m */,
+			);
+			path = ZYTopAlignedLabel;
+			sourceTree = "<group>";
+		};
+		318096E31675300B00B432B2 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				318096E41675300B00B432B2 /* ZYActivityViewController.h */,
+				318096E51675300B00B432B2 /* ZYActivityViewController.m */,
+				318096E61675300B00B432B2 /* ZYAddItemsViewController.h */,
+				318096E71675300B00B432B2 /* ZYAddItemsViewController.m */,
+				318096E81675300B00B432B2 /* ZYAddItemsViewController.xib */,
+				318096E91675300B00B432B2 /* ZYAddItemViewController.h */,
+				318096EA1675300B00B432B2 /* ZYAddItemViewController.m */,
+				318096EB1675300B00B432B2 /* ZYAddItemViewController.xib */,
+				318096EC1675300B00B432B2 /* ZYCredentialsViewController.h */,
+				318096ED1675300B00B432B2 /* ZYCredentialsViewController.m */,
+				318096EE1675300B00B432B2 /* ZYCredentialsViewController.xib */,
+			);
+			path = UserInterface;
+			sourceTree = "<group>";
+		};
+		318097131675343900B432B2 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3180970F1675342600B432B2 /* Icon.png */,
+				318097111675342900B432B2 /* Icon@2x.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		310D0A4316751F99006D271F /* SampleProject */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310D0A6B16751F99006D271F /* Build configuration list for PBXNativeTarget "SampleProject" */;
+			buildPhases = (
+				310D0A4016751F99006D271F /* Sources */,
+				310D0A4116751F99006D271F /* Frameworks */,
+				310D0A4216751F99006D271F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SampleProject;
+			productName = SampleProject;
+			productReference = 310D0A4416751F99006D271F /* SampleProject.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		310D0A3B16751F99006D271F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZY;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = zerously;
+			};
+			buildConfigurationList = 310D0A3E16751F99006D271F /* Build configuration list for PBXProject "SampleProject" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 310D0A3916751F99006D271F;
+			productRefGroup = 310D0A4516751F99006D271F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				310D0A4316751F99006D271F /* SampleProject */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		310D0A4216751F99006D271F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310D0A5316751F99006D271F /* InfoPlist.strings in Resources */,
+				310D0A5B16751F99006D271F /* Default.png in Resources */,
+				310D0A5D16751F99006D271F /* Default@2x.png in Resources */,
+				310D0A5F16751F99006D271F /* Default-568h@2x.png in Resources */,
+				310D0A6216751F99006D271F /* MainStoryboard_iPhone.storyboard in Resources */,
+				310D0A6516751F99006D271F /* MainStoryboard_iPad.storyboard in Resources */,
+				318096F31675300B00B432B2 /* instapaper-ipad.png in Resources */,
+				318096F41675300B00B432B2 /* instapaper-ipad@2x.png in Resources */,
+				318096F51675300B00B432B2 /* instapaper.png in Resources */,
+				318096F61675300B00B432B2 /* instapaper@2x.png in Resources */,
+				318096FE1675300B00B432B2 /* ZYAddItemsViewController.xib in Resources */,
+				318097001675300B00B432B2 /* ZYAddItemViewController.xib in Resources */,
+				318097021675300B00B432B2 /* ZYCredentialsViewController.xib in Resources */,
+				318097101675342600B432B2 /* Icon.png in Resources */,
+				318097121675342900B432B2 /* Icon@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		310D0A4016751F99006D271F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310D0A5516751F99006D271F /* main.m in Sources */,
+				310D0A5916751F99006D271F /* ZYAppDelegate.m in Sources */,
+				310D0A6816751F99006D271F /* ZYViewController.m in Sources */,
+				318096F71675300B00B432B2 /* ZYInstapaperAddRequest.m in Sources */,
+				318096F81675300B00B432B2 /* ZYInstapaperActivitySecurity.m in Sources */,
+				318096F91675300B00B432B2 /* KeychainItemWrapper.m in Sources */,
+				318096FA1675300B00B432B2 /* ZYActivity.m in Sources */,
+				318096FB1675300B00B432B2 /* ZYTopAlignedLabel.m in Sources */,
+				318096FC1675300B00B432B2 /* ZYActivityViewController.m in Sources */,
+				318096FD1675300B00B432B2 /* ZYAddItemsViewController.m in Sources */,
+				318096FF1675300B00B432B2 /* ZYAddItemViewController.m in Sources */,
+				318097011675300B00B432B2 /* ZYCredentialsViewController.m in Sources */,
+				318097031675300B00B432B2 /* ZYInstapaperActivity.m in Sources */,
+				318097041675300B00B432B2 /* ZYInstapaperActivityItem.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		310D0A5116751F99006D271F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310D0A5216751F99006D271F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		310D0A6016751F99006D271F /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310D0A6116751F99006D271F /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		310D0A6316751F99006D271F /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310D0A6416751F99006D271F /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		310D0A6916751F99006D271F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		310D0A6A16751F99006D271F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		310D0A6C16751F99006D271F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleProject/SampleProject-Prefix.pch";
+				INFOPLIST_FILE = "SampleProject/SampleProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		310D0A6D16751F99006D271F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SampleProject/SampleProject-Prefix.pch";
+				INFOPLIST_FILE = "SampleProject/SampleProject-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		310D0A3E16751F99006D271F /* Build configuration list for PBXProject "SampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310D0A6916751F99006D271F /* Debug */,
+				310D0A6A16751F99006D271F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		310D0A6B16751F99006D271F /* Build configuration list for PBXNativeTarget "SampleProject" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310D0A6C16751F99006D271F /* Debug */,
+				310D0A6D16751F99006D271F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 310D0A3B16751F99006D271F /* Project object */;
+}
