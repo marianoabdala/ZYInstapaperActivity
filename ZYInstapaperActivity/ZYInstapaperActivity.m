@@ -17,8 +17,8 @@
 
 @property (copy, nonatomic) NSArray *activityItems;
 
-- (void)removeDuplicateActivityItems;
 - (void)boxActivityItems;
+- (void)removeDuplicateActivityItems;
 
 @end
 
@@ -26,11 +26,6 @@
 
 #pragma mark - Hierarchy
 #pragma mark UIActivity
-- (NSString *)activityType {
-
-    return @"com.zerously.instapaper_activity";
-}
-
 - (NSString *)activityTitle {
 
     return NSLocalizedString(@"Read Later", @"");
@@ -95,14 +90,12 @@
     return urlFound;
 }
 
-- (void)prepareWithActivityItems:(NSArray *)activityItems {
+#pragma mark ZYActivity
+- (UIViewController *)performWithActivityItems:(NSArray *)activityItems {
     
     self.activityItems = activityItems;
     [self boxActivityItems];
     [self removeDuplicateActivityItems];
-}
-
-- (UIViewController *)activityViewController {
 
     UIViewController *controller = nil;
     
@@ -110,7 +103,7 @@
     [[ZYInstapaperActivitySecurity alloc] init];
     
     if (security.hasCredentials == NO) {
-
+        
         ZYCredentialsViewController *credentialsViewController =
         [[ZYCredentialsViewController alloc] initWithNibName:@"ZYCredentialsViewController"
                                                       bundle:nil
@@ -119,11 +112,11 @@
         credentialsViewController.activity = self;
         
         controller = credentialsViewController;
-
+        
     } else {
         
         if (self.activityItems.count == 1) {
-
+            
             ZYAddItemViewController *addItemViewController =
             [[ZYAddItemViewController alloc] initWithNibName:@"ZYAddItemViewController"
                                                       bundle:nil
@@ -134,7 +127,7 @@
             controller = addItemViewController;
             
         } else {
-         
+            
             ZYAddItemsViewController *addItemsViewController =
             [[ZYAddItemsViewController alloc] initWithNibName:@"ZYAddItemsViewController"
                                                        bundle:nil
@@ -143,7 +136,7 @@
             addItemsViewController.activity = self;
             
             controller = addItemsViewController;
-
+            
         }
     }
     
@@ -170,6 +163,49 @@
 }
 
 #pragma mark ZYInstapaperActivity ()
+- (void)boxActivityItems {
+    
+    NSMutableArray *mutableActivityItems =
+    [NSMutableArray array];
+    
+    [self.activityItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        
+        if ([obj isKindOfClass:[ZYInstapaperActivityItem class]] == YES) {
+            
+            [mutableActivityItems addObject:obj];
+            
+            return;
+        }
+        
+        if ([obj isKindOfClass:[NSURL class]] == YES) {
+            
+            ZYInstapaperActivityItem *item =
+            [[ZYInstapaperActivityItem alloc] initWithURL:(NSURL *)obj];
+            
+            [mutableActivityItems addObject:item];
+            
+            return;
+        }
+        
+        if ([obj isKindOfClass:[NSString class]] == YES &&
+            [NSURL URLWithString:obj] != nil) {
+            
+            NSURL *url =
+            [NSURL URLWithString:(NSString *)obj];
+            
+            ZYInstapaperActivityItem *item =
+            [[ZYInstapaperActivityItem alloc] initWithURL:url];
+            
+            [mutableActivityItems addObject:item];
+            
+            return;
+        }
+    }];
+    
+    self.activityItems =
+    [NSArray arrayWithArray:mutableActivityItems];
+}
+
 - (void)removeDuplicateActivityItems {
 
     NSMutableArray *activityItemsToRemove =
@@ -211,49 +247,6 @@
 
     [mutableActivityItems removeObjectsInArray:activityItemsToRemove];
     
-    self.activityItems =
-    [NSArray arrayWithArray:mutableActivityItems];
-}
-
-- (void)boxActivityItems {
-    
-    NSMutableArray *mutableActivityItems =
-    [NSMutableArray array];
-    
-    [self.activityItems enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        
-        if ([obj isKindOfClass:[ZYInstapaperActivityItem class]] == YES) {
-
-            [mutableActivityItems addObject:obj];
-            
-            return;
-        }
-        
-        if ([obj isKindOfClass:[NSURL class]] == YES) {
-            
-            ZYInstapaperActivityItem *item =
-            [[ZYInstapaperActivityItem alloc] initWithURL:(NSURL *)obj];
-            
-            [mutableActivityItems addObject:item];
-            
-            return;
-        }
-        
-        if ([obj isKindOfClass:[NSString class]] == YES &&
-            [NSURL URLWithString:obj] != nil) {
-
-            NSURL *url =
-            [NSURL URLWithString:(NSString *)obj];
-            
-            ZYInstapaperActivityItem *item =
-            [[ZYInstapaperActivityItem alloc] initWithURL:url];
-
-            [mutableActivityItems addObject:item];
-
-            return;
-        }
-    }];
-
     self.activityItems =
     [NSArray arrayWithArray:mutableActivityItems];
 }

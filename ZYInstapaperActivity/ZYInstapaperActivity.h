@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <Security/Security.h>
+#import "ZYActivity.h"
 
-@interface ZYInstapaperActivity : UIActivity
+@interface ZYInstapaperActivity : ZYActivity
 
 + (ZYInstapaperActivity *)instance;
 
