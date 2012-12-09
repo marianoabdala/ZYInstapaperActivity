@@ -7,12 +7,11 @@ Feel free to add any request, bug or inquiry on the issues section!
 
 Previews
 ========
-
-![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Intro.PNG)
-![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/UIActivityViewController.PNG)
-![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/WithTheGang.PNG)
-![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Credentials.PNG)
-![](https://raw.github.com/marianoabdala/Instapaper-Activity/master/Preview/Adding.PNG)
+![](https://raw.github.com/marianoabdala/ZYInstapaperActivity/master/Resources/Intro.PNG)
+![](https://raw.github.com/marianoabdala/ZYInstapaperActivity/master/Resources/UIActivityViewController.PNG)
+![](https://raw.github.com/marianoabdala/ZYInstapaperActivity/master/Resources/WithTheGang.PNG)
+![](https://raw.github.com/marianoabdala/ZYInstapaperActivity/master/Resources/Credentials.PNG)
+![](https://raw.github.com/marianoabdala/ZYInstapaperActivity/master/Resources/Adding.PNG)
 
 Usage sample
 ============
