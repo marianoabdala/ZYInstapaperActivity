@@ -98,8 +98,8 @@
 - (void)prepareWithActivityItems:(NSArray *)activityItems {
     
     self.activityItems = activityItems;
-    [self removeDuplicateActivityItems];
     [self boxActivityItems];
+    [self removeDuplicateActivityItems];
 }
 
 - (UIViewController *)activityViewController {
@@ -198,40 +198,6 @@
                 }
                 
                 if ([item.url.absoluteString isEqual:objToRemove] == YES) {
-                    
-                    [activityItemsToRemove addObject:objToRemove];
-                    return;
-                }
-            }];
-        }
-     
-        if ([obj isKindOfClass:[NSURL class]] == YES) {
-            
-            NSURL *item =
-            (NSURL *)obj;
-            
-            [self.activityItems enumerateObjectsUsingBlock:^(id objToRemove, NSUInteger idxToRemove, BOOL *stopToRemove) {
-                
-                if ([item isEqual:objToRemove] == YES) {
-                    
-                    [activityItemsToRemove addObject:objToRemove];
-                    return;
-                }
-                
-                if ([item.absoluteString isEqual:objToRemove] == YES) {
-                    
-                    [activityItemsToRemove addObject:objToRemove];
-                    return;
-                }
-            }];
-        }
-        
-        if ([obj isKindOfClass:[NSString class]] == YES &&
-            [NSURL URLWithString:obj] != nil) {
-
-            [self.activityItems enumerateObjectsUsingBlock:^(id objToRemove, NSUInteger idxToRemove, BOOL *stopToRemove) {
-                
-                if ([obj isEqual:objToRemove] == YES) {
                     
                     [activityItemsToRemove addObject:objToRemove];
                     return;
