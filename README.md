@@ -74,7 +74,9 @@ How to install
 
 Other referenced projects
 =========================
-
+* [KeychainItemWrapper ARCified](https://gist.github.com/1170641) by [David Hoerl](https://github.com/dhoerl)
+* [ZYActivity](https://github.com/marianoabdala/ZYActivity) by [Mariano Abdala](https://github.com/marianoabdala)
+* [ZYTopAlignedLabel](https://github.com/marianoabdala/Zerously-toolkit) by [Mariano Abdala](https://github.com/marianoabdala)
 
 License
 =======
